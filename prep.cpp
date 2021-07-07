@@ -15,6 +15,7 @@ void set(Base& obj, int x)
     obj.x = x;
 }
 
+
 int get (Base&obj){return obj.x;}
 int main(){
     Base b;
