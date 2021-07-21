@@ -10,7 +10,9 @@ ways to create thread:
     memeber functions
     static member function
 
+-- thread could be useful to perform parallel operaions if target machine have multicore processor
 Problem: Find the addn of all odd number from 0 to 1900000000 and even no
+
 */
 
 #include <iostream>
