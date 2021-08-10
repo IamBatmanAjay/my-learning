@@ -1,0 +1,36 @@
+Q:    In a single core system will you use multithreading or multiprocessing? Why?
+A:    Having a single core does not matter in this question - you can successfully use either multithread or multiprocess 
+on a single core system. Starting from here your answer should evolve into a discussion on what's the use case, 
+is it memory heavy, is there a need for inter-process/inter-thread communication and what language/framework is used 
+(Python, for instance, has GIL which can choke your performance when using multithreading, but on the other hand communication 
+between processes in multiprocessing can be very time expensive). Also, depending on the platform/operating system there 
+might be other things to consider - memory you can allocate per process/thread and the number of processes and threads 
+per process that you can start.
+If the software module is large, its good practice to create multiple processes and multiple threads within the process irrespective of single core or multiple
+cores. There is no point in clubbing everything under a single process. Lot of legacy systems deployed in the field have single core with multiple
+process and threads architecture. Having maintainable software is also equally important. However if software module is relatively small then it is preferable
+to have single process with multiple threads.
+
+Q:    C++ for Embedded Systems and RealTimeOperatingSystems, I was asked in an interview about the concerns using C++ in 
+embedded systems/real time operating systems and one of the hints he mentioned was regarding memory but I was not 
+sure and am curious to how memory and c++ are a concern in such systems. Any thoughts?
+A:    I think it might be that C++ usually generate binaries with larger size which would usually occupy more flash 
+memory and ram. Usually flash or ram can be rather valuable on embedded systems.
+Say if you want a array of elements you might use std::vector instead of C style [] arrays, which might introduce 
+extra code such as the constructor and deconstructor of the class std::vector, and the member variables and functions 
+of the class.
+Also C++ exception might make the code even larger. For example, the operator new can throw a std::bad_alloc exception when the memory allocation is not successful, thus using new can generate larger binaries compared to C function malloc().
+This article mentioned some methods to reduce C++ generated binary size: http://elegantinvention.com/blog/information/smaller-binary-size-with-c-on-baremetal-g
+
+Q:      When and how does the operating system gets time to run in the CPU when the processes are running?
+A:      Every process running in operating system has ring-3 (user mode) and ring-0 (kernel mode). Typically, 
+a process runs in ring-3 mode, when it needs to do some fantasy work e.g. to access a file, to print something in 
+console, it needs to call operation system provided service. When a process gets trapped into kernel mode, 
+operating system take over to run in the CPU. There are some ways for a process to enter kernel mode. 
+To call int 0x80, the is a classical way, 0x80 is an entry in system's IDT (Interrupt Descriptor Table) 
+which is specially allocated for system call. When process calls this, CPU switch to ring-0, Linux kernel's system call 
+routine is called, which switch process context to kernel mode (e.g. to switch to use kernel stack), then it calls 
+some system call routine. There are some other ways for process to enter kernel mode, e.g. x86 provide sysenter instruction, 
+which aims to enter kernel mode efficiently. In addition to process proactively gets trapped to operating system, 
+when interrupt occur (e.g. keyboard event, timer event), related interrupt routine would interrupt current process execution 
+and takes over CPU.
