@@ -7,8 +7,7 @@
 //	   b. time-constrained attempts at locking (try_lock_for, try_lock_until)
 //	   c. recursive locking
 //	   d. transfer of lock ownership (move not copy)
-//	   e. condition variables. (See this in coming videos)
-
+//	   e. condition variables. 
 // Locking Strategies
 //    TYPE       	  	EFFECTS(S)
 // 1. defer_lock		do not acquire ownership of the mutex.
@@ -26,6 +25,7 @@ int buffer = 0;
 // EXAMPLE: 1
 
 // void task(const char* threadNumber, int loopFor) {
+// 	cout << "|Here I am waiting ..." << endl ;
 // 	std::unique_lock<mutex> lock(m1); // Automatically calls lock on mutex m1
 // 	for(int i=0; i<loopFor; ++i){
 // 		buffer++;
@@ -53,16 +53,20 @@ int buffer = 0;
 
 void task(const char* threadNumber, int loopFor) {
 	std::unique_lock<mutex> lock(m1, std::defer_lock); // Does not call lock on mutex m1, because used defer_lock
-	lock.lock();  // But then we will have to explicitly tell to lock when ever we want to lock mutex m1.
+	 // But then we will have to explicitly tell to lock when ever we want to lock mutex m1.
+	if (lock.try_lock()){
 	for(int i=0; i<loopFor; ++i){
 		buffer++;
 		cout << threadNumber << buffer << endl;
-	}
+	}}
 	// lock.unlock(); is not needed as it will be unlocked in destructor of unique_lock.
 }
 
 int main() {
+	std::unique_lock<mutex> lock(m1);
+	while(1)
 	thread t1(task, "T1 ", 10);
+	lock.unlock();
 	thread t2(task, "T2 ", 10);
 	t1.join();
 	t2.join();

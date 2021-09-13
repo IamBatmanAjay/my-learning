@@ -1,0 +1,246 @@
+Object Oriented Programming (OOP) in C++
+
+    As the name suggests, it brings the use of "objects" in programming. Basically, they are some guidelines for running efficient programs.
+    Let me explain the difference between tradition style and OOP style of programming with an example:
+    Traditional: running(); // we don't know who's running.
+    OOP: Jack.running(); // here we know who's running. Jack is the object here.
+
+    The main aim of OOP is to bind together the data and functions that work on them, so that no other part of the code can access the data, except that function.
+
+CLASS
+
+    User defined data type, which holds its own data members and member functions.
+    Used to define properties/behaviour of objects.
+    Example:
+    class Car
+    {
+        // These are some of the properties that every Car share in common.
+        int number_of_wheels;
+        int cost;
+        bool fuel_type;
+        
+        int increase_speed()
+        { /* some code */ }
+    };
+    Data members are data variables.
+    Member functions are the functions used to manipulate these variables.
+    Together they define properties/behaviour of the class.
+
+OBJECTS
+
+    Objects are an instance of a class.
+    When a class is created no memory is allocated, memory allocation done only when object is initialised.
+    Example:
+    class Car
+    {
+        // These are some of the properties that every Car share in common.
+        int number_of_wheels;
+        int cost;
+        bool fuel_type;
+        
+        int increase_speed()
+        { /* some code */ }
+    };
+    int main()
+    {
+        Car c1; // object of car class initialised.
+    }
+
+
+
+ENCAPSULATION
+
+    Wrapping up of data & function into a single unit.
+    Also known as INFORMATION HIDING concept.
+    Example:
+    Suppose I'm using a TV remote. I need to only press the button and it changes channels or increases volume for me. I don't need to know to internal function of the remote. Here class Remote encapsulates them.
+
+ABSTRACTION
+
+Only showing the user/outer world, what is need and hiding other important informations.
+Also a kind of Data Hiding.
+
+Encapsulation vs Abstraction:
+
+Abstraction is basically a thought process of showing what is needed (basically showing only relevant data).
+Encapsulation on the other hand is actually bringing down complexity by hiding data. In other words, Encapsulation implements Abstraction.
+Example:
+class Customer
+{
+	public:
+	string customer_name = "";
+	string customer_id = "";
+	
+	void Add()
+	{
+		validate(); 
+		Add_to_database();
+	}
+	
+	private:
+	void validate()
+	{ /* some code */ }
+	void Add_to_database()
+	{ /* some code */ }
+};
+The above Customer class, is the membership storage database of a shopping mall.
+In the above code the private part is irrelevant to the customer, so it is hidden to the outside world. Only the public part is useful to the customer.
+How is Abstraction done ?
+
+Using data member visibility (public/private/protected)
+Using header files:
+Suppose we use pow() in our code that come under math.h. We don't know the underlying algorithm used (hidden), but we just use it in our codes.
+
+POLYMORPHISM
+
+poly: many, morph: forms. Basically, when one thing has more than one forms.
+Basically, more than one function, with same name yet different use.
+Types:
+
+Static/ Compile time:
+a. Function overloading:
+Example:
+class C
+{
+	void fun(int x)
+	{...}
+	void fun(double y)
+	{...}
+	void fun(int , int)
+	{...}
+};
+b. Operator Overloading
+
+class Complex {
+private:
+    int real, imag;
+public:
+    Complex(int r = 0, int i =0)  {real = r;   imag = i;}
+      
+    // This is automatically called when '+' is used with
+    // between two Complex objects
+	// Operator overloading part.
+    Complex operator + (Complex const &obj) {
+         Complex res;
+         res.real = real + obj.real;
+         res.imag = imag + obj.imag;
+         return res;
+    }
+    void print() { cout << real << " + i" << imag << endl; }
+};
+
+
+Dynamic /Runtime:
+a. Virtual Function
+INHERITANCE
+
+Capability of a class to derive properties from other class.
+Example:
+ class Animal 
+ {  
+    public:  
+	 void eat() 
+	 {   
+		cout<<"Eating..."<<endl;   
+	 }    
+ };  
+   class Dog: public Animal    
+  {    
+       public:  
+		void bark()
+		{  
+			cout<<"Barking...";   
+		}    
+ };   
+Here, the class Dog is derived from class Animal. It has properties of Animal, alongwith some additional functionalities.
+In C++, if a derived class redefines base class member method then all the base class methods with same name become hidden in derived class. i.e --
+class Base 
+{
+public:
+    int fun()      { cout << "Base::fun() called"; }
+    int fun(int i) { cout << "Base::fun(int i) called"; }
+};
+  
+class Derived: public Base 
+{
+public:
+    int fun(char x)   { cout << "Derived::fun(char ) called"; }
+};
+int main() 
+{
+    Derived d;
+    d.fun();
+    return 0;
+}
+The above code gives error upon compilation, as fun() of base class is not accessible in the derived class.
+
+Modes of Inheritance
+
+Public mode: If we derive a sub class from a public base class. Then the public member of the base class will become public in the derived class and protected members of the base class will become protected in derived class.
+Protected mode: If we derive a sub class from a Protected base class. Then both public member and protected members of the base class will become protected in derived class.
+Private mode: If we derive a sub class from a Private base class. Then both public member and protected members of the base class will become Private in derived class.
+Types of Inheritance in C++
+
+Single Inheritance: In single inheritance, a class is allowed to inherit from only one class. i.e. one sub class is inherited by one base class only.
+Multiple Inheritance: Multiple Inheritance is a feature of C++ where a class can inherit from more than one classes. i.e one sub class is inherited from more than one base classes.
+Multilevel Inheritance: In this type of inheritance, a derived class is created from another derived class.
+Hierarchical Inheritance: In this type of inheritance, more than one sub class is inherited from a single base class. i.e. more than one derived class is created from a single base class.
+ACCESS MODIFIER
+
+Data Hiding.
+By default, it is private in class.
+Private: Can be accessed by only inside class member functions or the friend function.
+Public: Can be accessed by anyone.
+Protected: Can be accessed by only inside class member functions or the friend function. In addition, can alos be accessed by the derived class.
+FRIEND CLASS and FUNCTION
+
+A friend class can access private and protected members of other class in which it is declared as a friend.
+A friend function, like friend class can access private and protected members of other class in which it is declared as a friend.
+It can be declared as : i) Global Function. ii) A member of other class.
+Friendship is NOT inherited. (If base class has a friend function, it doesn't automatically become friend of derived class.)
+
+CONSTRUCTOR
+
+Member function of the class (Bearing same name as the class).
+Automatically called, when object is initialised.
+Constructor has no return type.
+Types:
+
+Default constructor: Default constructor is the constructor which doesn’t take any argument. It has no parameters.
+Even if we do not define any constructor explicitly, the compiler will automatically provide a default constructor implicitly.
+Parameterized Constructors: Arguments are passed to the constructor.
+Calling constructor --
+i) Implicit call -> Example e(0, 1);
+ii) Explicit call -> Example e = e(0, 1);
+Constructor Overloading --
+More than one constructor bearing same name, bu a different list of parameters.
+Copy Constructor: A copy constructor is a member function which initializes an object using another object of the same class. Example -
+Example(const Example& e1) { ... }
+Default copy constructor creates a shallow copy of the objects, whereas in user defined copy constructor, a deep copy is created.
+
+DESTRUCTOR
+
+Destructor is a member function (bearing same name as the construction with a ~ before) which destroys or deletes an object. [~ constructor_name]
+Should always be declared publicly, and cannot be declared as const or static.
+Programmer can't access the address of the destructor.
+
+VIRTUAL FUNCTION
+
+Member function, declared within a base class, and is redefined within the derived class.
+When we refer to a derived class object using pointer to a base class, we can call the virtual function for that object & execute the derived class's version of the function.
+Type of Runtime polymorphism.
+ABSTRACT CLASS
+
+Sometimes implementation of all function cannot be provided in a base class because we don’t know the implementation. Such a class is called abstract class.
+Example, let Shape be a base class. We cannot provide implementation of function draw() in Shape, but we know every derived class must have implementation of draw().
+Class is Abstract, if we have atleast one pure virtual function.
+PURE VIRTUAL FUNCTION
+
+Also called Absract function.
+A pure virtual function in c++, is a virtual function for which we can have implementation, but we must override that function in the derived class, otherwise the derived class will also become abstract class.
+Example
+class X
+{
+	public:
+	virtual void show() = 0; // pure virtual func
+};
