@@ -21,7 +21,10 @@ using namespace std;
 class MyInt {
     public:
         explicit MyInt(int *p=nullptr) { data = p; }
-        ~MyInt() { delete data; }
+        ~MyInt() { 
+            cout << "Dtructor..MyInt()";
+            delete data; 
+            }
         int& operator * () { return *data; }
     private:
         int *data;

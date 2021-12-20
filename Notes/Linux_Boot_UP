@@ -7,7 +7,7 @@ Stages of Linux Boot Process:
 1.The machine’s BIOS or boot microcode hundreds and runs a boot loader.
 2.Boot loader finds the kernel image on the disk and loads it into memory, to start the system.
 3.The kernel initializes the devices and their drivers.
-4.The kernel mounts the basis filesystem.
+4.The kernel mounts the basic filesystem.
 5.The kernel starts a program referred to as init with a method ID zero
 6.init sets the remainder of the system processes in motion.
 7.For some purpose, init starts a method permitting you to log in, typically at the top or close to the top of the boot sequence.
