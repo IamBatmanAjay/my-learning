@@ -8,3 +8,30 @@ Stanley interviews for Java/C++ developer positions, I would suggest that you co
 6. Check some of the common development practices in low latency applications
 7. Read up on performance tuning
 8. Read up on memory model and garbage collection. Its probably a good idea to practice implementing a graph based basic garbage collection algorithm
+
+
+Operating systems/Computer Architecture:
+
+    Process and Threads
+    Process Scheduling
+    Synchronization mechanisms (mutex/spinlock/semaphore)
+    Memory Management (Virtual memory/paging/translation)
+    Producer and Consumer Problem
+    Caching (cache coherency/cache line)
+    Memory mapped IO/ IO Mapped IO
+    Linux Kernel concepts:
+
+    Buffer sharing: DMA Buf & ION
+    Wait events/Wait queues
+    ISR handling (Top half/Bottom half)
+    Bottom Half - Tasklet/Workqueue/SoftIRQ
+    Platform driver
+    Driver probe (Module init, driver register, compatibility string)
+    Device Tree (Device nodes and parsing)
+    Clocks/Regulators/GPIO/Pinctrl
+    IOMMU/MMU
+    Timer Library
+    IOCTL, notify dirent
+    kmalloc/vmalloc
+    kmap/mmap/ioremap
+    sysfs/debugfs/procfs

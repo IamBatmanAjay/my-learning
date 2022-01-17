@@ -6,6 +6,11 @@ struct  Node{
     Node* next;
 };
 
+bool checkPalindrome(Node** root_ref)
+{
+    
+}
+
 void insertNode(Node **root_ref, int data)
 {
     Node* newNode;
@@ -73,21 +78,31 @@ int main()
 {
     Node *root = NULL;
     int data, n;
-    cout << "Enter total node - " << endl;
-    cin >> n;
+    // cout << "Enter total node - " << endl;
+    // cin >> n;
 
-    cout << "Enter node data - " << endl;
-    for (int i=0; i<n; i++)
-    {
-        cin >> data;
-        insertNode(&root, data);
-    }
-    cout << endl;
-    printList(root);
+    // cout << "Enter node data - " << endl;
+    // for (int i=0; i<n; i++)
+    // {
+    //     cin >> data;
+    //     insertNode(&root, data);
+    // }
+    // cout << endl;
 
-    insertNode(&root, 100);
-    cout << endl;
-    deleteNode(&root, 5);
+    insertNode(&root, 3);
+
+    insertNode(&root, 5);
+
+    insertNode(&root, 6);
+
+    insertNode(&root, 9);
+
+    insertNode(&root, 10);
+
+    insertNode(&root, 12);
+
+    deleteNode(&root, 15);
+
     printList(root);
 
 }

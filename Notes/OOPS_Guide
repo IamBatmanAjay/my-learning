@@ -244,3 +244,58 @@ class X
 	public:
 	virtual void show() = 0; // pure virtual func
 };
+
+
+-->> If we dont write paramaterized constructor and dont write copy constructor then compiler create copy copyconstructor
+     on its own, but other way is not correct ie; if we write copy constructor then compiler do not create parametrized constructor
+
+-->> Objects must be passed by reference in copy constructors. Compiler checks for this and produces compiler error 
+    if not passed by reference.
+
+-->> We must use initializer list in a constructor when -
+        There is a reference variable in class
+        There is a constant variable in class
+        There is an object of another class. And the other class doesn't have default constructor.
+
+-->> Constructors can be private, for example, we make copy constructors private when we don't want to create 
+     copyable objects. The reason for not making copyable object could be to avoid shallow copy.
+
+-->> If a class has a constructor which can be called with a single argument, then this constructor becomes 
+    conversion constructor because such a constructor allows automatic conversion to the class being constructed. 
+    A conversion constructor can be called anywhere when the type of single argument is assigned to the object.
+
+-- >> When a class inherits from multiple classes, constructors of base classes are called in the same order as 
+    they are specified in inheritance.
+
+A base class pointer can point to a derived class object, but we can only access base class member or virtual functions using the base class pointer.
+
+If a derived class writes its own method, then all functions of base class with same name become hidden, even if signaures of base class functions are different.
+
+We can access base class functions using scope resolution operator even if they are made hidden by a derived class function.
+
+A typical example of object slicing, when we assign an object of derived class to an object of base type, the derived class object is sliced off and all the data members inherited from base class are copied. Object slicing should be ovoided as there may be surprising results like above.
+
+If we don't override the pure virtual function in derived class, then derived class also becomes abstract class.
+
+There is nothing like Virtual Constructor. Making constructors virtual doesn't make sense as constructor is responsible for creating an object and it can’t be delegated to any other object by virtual keyword means.
+
+A destructor can be virtual. We may want to call appropriate destructor when a base class pointer points to a derived class object and we delete the object. If destructor is not virtual, then only the base class destructor may be called. 
+
+Static functions are class specific and may not be called on objects. Virtual functions are called according to the pointed or referred object.
+
+When a class has a virtual function, functions with same signature in all descendant classes automatically become virtual. We don't need to use virtual keyword in declaration of fun() in B and C. 
+
+A base class function can be accessed with scope resolution operator even if the function is virtual.When a function is declared as const, it cannot modify data members of its class. 
+
+When we don't want to modify an argument and pass it as reference or pointer, we use const qualifier so that the argument is not accidentally modified in function. Class data members can be declared as both const and static for class wide constants. Reference variables can be const when they refer a const location.
+
+A const object can only call const functions.
+
+One cannot change the value of 'const' variable except at the time of initialization. Compiler does check this.
+
+Const keyword can be put after the variable name or before variable name. But most programmers prefer to put const keyword before the variable name.
+
+
+
+
+

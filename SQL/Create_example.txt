@@ -1,0 +1,17 @@
+SQL | CREATE
+------------
+
+There are two CREATE statements available in SQL:
+
+    - CREATE DATABASE
+    - CREATE TABLE
+
+A Database is defined as a structured set of data. So, in SQL the very first step to store the data in a 
+well structured manner is to create a database. 
+
+The CREATE DATABASE statement is used to create a new database 
+in SQL.
+    CREATE DATABASE database_name;
+    database_name: name of the database.
+
+    Example Query: CREATE DATABASE my_database;

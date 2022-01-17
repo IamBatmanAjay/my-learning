@@ -1,0 +1,34 @@
+Things to Prepare:
+
+
+OS memory management, deadlocks, semaphores, mutex. Also questions on data structures and their implementations.
+Knowledge of C pointer and reference, outcome of printf
+Knowledge of array algorithm, finding
+Programming Language, Problem-solving questions and coding
+
+Few output questions related to static variables, format of printf function
+Coding Question:
+Q1: Given a very large number, which cannot be stored in usual data types. How will you store it and add one to it?
+
+Q2: Given an sorted array of numbers, find the missing number in less than O(n)
+
+O/P question related to pointers, static variables
+Pass by value/reference, pointer arithmetic (know your pointers throughly)
+How to design free function of your own?
+How to count all objects instantiated by a class?
+Runtime polymorphism in c++
+
+Design phone book: search by name, phone number and print 10 most dialled numbers
+
+Why BST cannot be used?
+Comparison between bst and trie
+Benefits of trie over bst except search optimisation
+Time complexity in bst
+
+
+-- linked list insertion from front
+-- find bug in a method which need to return char pointer
+-- how linux  pipe "|" works 
+-- ipc
+-- updating shared resources
+-- find optimal way to find duplicate lines in a 20GB file with millions of line

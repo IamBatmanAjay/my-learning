@@ -19,7 +19,7 @@ Step 7 − if both step 5 and step 6 does not match swap left and right
 Step 8 − if left ≥ right, the point where they met is new pivot
 */
 
-
+// https://www.youtube.com/watch?v=GuLEh6q6qE8&t=348s
 /* C++ implementation of QuickSort */
 #include <bits/stdc++.h>
 using namespace std;

@@ -20,13 +20,13 @@ using namespace std;
 
 // Example
 
-// int main() {
-//     std::multiset<int, std::greater<int>> multiSet = {5,2,4,3,2,5};
-//     multiSet.insert(20);
-//     for(const auto& e: multiSet) {
-//         cout << e << endl;
-//     }
-// }
+int main() {
+    std::multiset<int, std::greater<int>> multiSet = {5,2,4,3,2,5};
+    multiSet.insert(20);
+    for(const auto& e: multiSet) {
+        cout << e << endl;
+    }
+}
 
 //Example : User Defined
 class Person{
@@ -37,11 +37,11 @@ class Person{
     bool operator > (const Person& rhs) const { return age>rhs.age; }
 };
 
-int main() {
-	std::multiset<Person,std::greater<>> multiSet = {{25,"Rupesh"}, {20,"Hitesh"}};
+// int main() {
+// 	std::multiset<Person,std::greater<>> multiSet = {{25,"Rupesh"}, {20,"Hitesh"}, {20, "Ajay"}};
 
-    for(const auto& e: multiSet){
-        cout << e.age << " " << e.name << endl;
-    }
-    return 0;
-}
+//     for(const auto& e: multiSet){
+//         cout << e.age << " " << e.name << endl;
+//     }
+//     return 0;
+// }

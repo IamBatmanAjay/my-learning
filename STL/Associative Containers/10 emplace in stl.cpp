@@ -20,9 +20,9 @@ bool operator < (const A& lhs, const A& rhs) { return lhs.x < rhs.x; }
 
 int main() {
     set<A> Set;
-    // A a(10);
-    //Set.insert(A(10));
-    //Set.emplace(10);
+    //A a(10);
+    Set.insert(A(10));
+    Set.emplace(10);
     for ( auto & elm: Set){
         cout << elm.x << endl;
     }

@@ -22,8 +22,8 @@ void thread2() {
 	std::this_thread::sleep_for(std::chrono::seconds(1));
 	m2.lock();
 	cout << "Critical Section Of Thread Thread Two\n";
-	m2.unlock();
 	m1.unlock();
+	m2.unlock();
 }
 
 int main() {

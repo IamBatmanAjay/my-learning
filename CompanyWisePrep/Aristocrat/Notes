@@ -1,0 +1,26 @@
+
+Given an array of Zeros and Ones. Sort the array in 1 scan only.
+Detect loop in a linked list.
+Reverse linked list. Asked me to write both approaches, recursive as well as iterative.
+ -- 
+What is initializer list in C++. When should we use it.
+ -- to initialize base class mem var
+ -- to increase performance
+ -- to assign const mem var
+Detailed discussion on virtual class, vptr and vtable.
+    -- used to avoid diamond problem
+    -- 
+What is smart pointer. When should we use it. Asked me to implement unique_ptr of my own.
+Explicit keyword.
+ -- It 
+What are design patterns. Asked me to implement a singleton class.
+
+
+Oops concepts
+25 horses puzzle
+implement copy constructor
+multithreading
+implement complete class
+virtual function
+concepts of vptr and vtable
+abstract class

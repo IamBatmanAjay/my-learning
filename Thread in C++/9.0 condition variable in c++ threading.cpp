@@ -46,7 +46,7 @@ int myAmount = 0;
 std::mutex m;
 
 void addMoney() {
-	std::lock_gaurd<std::mutex> lock(m);
+	std::lock_guard<std::mutex> lock(m);
 	++myAmount;
 }
 

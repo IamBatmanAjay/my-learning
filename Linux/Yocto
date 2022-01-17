@@ -1,0 +1,109 @@
+Yocto Project Interview Questions:
+-----------------------------------------
+
+
+Yocto is an Open source Project and used to create custom Linux for embedded devices. This is part-1 of the Yocto interview Questions which surely gonna help you in your professional interviews. Here we are going to discuss the IMAGE_INSTALL variable, Variable assignment, DEPENDS, and RDEPENDS variable uses, etc...
+
+What is difference between IMAGE_INSTALL += " packagename" and IMAGE_INSTALL_append = " packagename"?
+Both variables are used to add the extra package to the image.
+To avoid any ordering issue, use the IMAGE_INSTALL_append in conf/local.conf instead of IMAGE_INSTALL +=
+Suppose you want to add strace in your image. so It is recommended to add the below code in conf/local.conf files.
+IMAGE_INSTALL_append = " strace"
+If you want to create your image recipe then it is preferred to use IMAGE_INSTALL variable to add the packages or package groups to the image.
+Example: In recipe core-image-minimal-mtdutils.bb,IMAGE_INSTALL += "mtd-utils" variable is used to add MTD Utilities.
+
+ 
+ 
+What is the default assignment Variable in the Bitbake Recipe?
+In the Bitbake Recipe, the Variable is defined with "= " sign called the direct assignment.
+Example: var = 10 --> value of var is equal to 10.
+The Variable is defined with " ?= " sign called default assignment.
+var1 ?=10
+var2 ?= 20
+var2 ?=30
+The value of var1 would be 10.
+The value of var2 would be 20 because it is previously defined so their value would retain.
+Yocto Recipe Layout
+
+How to read Bitbake Recipe variables
+
+Note: To read the recipe variable, use this command bitbake -e {recipe} | grep ^variable
+
+ 
+What is the difference between DEPENDS vs RDEPENDS variable in the Bitbake recipe?
+When Bitbake starts building any software packages and that packages have some dependency on another package so these variables DEPENDS and RDEPENDS are used to resolve the dependency.
+
+DEPENDS variable is used for the build time dependency. so dependent packages and libraries are required before build the actual package.
+Example: coreutils_8.32.bb recipe depends on gmp and libcap recipe. so Bitbake first build the gmp and libcap package before coreutils.
+DEPENDS = "gmp libcap"
+Depends Variable in Yocto
+
+ 
+
+RDEPENDS variable is used for run time dependency. so all the packages and libraries are required during the execution program on the target system.
+Example: Recipe perf.bb is RDEPENDS on elfutils and bash recipes so in this case elfutils and bash should be available when perf executed on the target.
+RDEPENDS_${PN} += "elfutils bash"
+RDEPENDS Variable in Yocto
+
+
+Now we are going to discuss the Build Process, bbclass files, PREFERRED_VERSION variable, bb utils function, and state cache use case, etc...
+
+What are the steps required to build a custom Linux image using the Yocto Project?
+The Yocto Project provides tools, metadata, and a build framework to create the custom Linux image for your target board.
+You have to follow the below steps to building the image with the Yocto Project.
+You need to install some tools on your host system to support the Yocto Project Development.
+Download the Poky source code from the Yocto repository.
+Setup the build environment by running the oe-init-build-env script from the Poky directory.
+Select the machine (target board name) from local.conf file.
+Run the bitbake command from the build directory to create the image.
+What is the bbclass in the Yocto?
+A bbclass file contains common functionality that is shared between the multiple recipes.
+.bbclass is the extension of the class files.
+Each meta-layer has a class directory that contains the .bbclass files.
+# You can use bbclass in the recipe by inheriting the class file.
+# autotools.bbclass is a class file present in meta directory.
+inherit autotools
+How to build a particular version of a software package in the Yocto Project when there is multiple version of recipe present.
+By default, if multiple versions of the recipe present in the layer then Bitbake selects the latest version of the recipe.
+Suppose you have multiple versions of linux-yocto recipe in your meta layer then you can select any version of the recipe with the below code.
+Add this code in your local.conf file
+# Select the particular version of the recipe 
+PREFERRED_VERSION_package_name = “version”
+
+#Here package_name is linux-yocto and version 4.14
+PREFERRED_VERSION_linux-yocto =	“4.14”
+
+# Some time you need to add the "%" symbol to match with the version string
+PREFERRED_VERSION_linux-yocto =	“4.14%”
+What is the bitbake utility function in the bitbake recipe?
+bb.utils is the bitbake utility function and bb.utils.contains function is most commonly used in the bitbake recipe.
+You can find the complete code of the bibake utility function from here
+Basic Syntex of the bb.utils.contains function.
+bb.utils.contains(variable, checkvalues, truevalue, falsevalue, d)
+variable - Name of the variable
+checkvalues - This argument is used to check the presence of checkvalues in variable value
+truevalue - if checkvalues is a subset of variable then it returns the 3rd argument truevalue
+falsevalue -- if checkvalues is not a subset of variable then return 4th argument falsevalue
+d - the data store.
+Example:
+A hello_1.0.bb recipe contains the below code snippet and we are checking the var1 and var2 values using the bb.utils.contains function.
+bb.utils.contains function
+
+# if var1 and var2 value is correct then return True otherwise False
+var1 = "10"
+var2 = "hello"
+foo1 = "${@bb.utils.contains('var1', '10', 'True', 'False', d)}"
+foo2 = "${@bb.utils.contains('var2', 'hello', 'True', 'False', d)}"
+foo3 = "${@bb.utils.contains('var1', '20', 'True', 'False', d)}"
+
+# As per the above code we will get the below result.
+foo1="True"
+foo2="True"
+foo3="False"
+bb.utils.contains function output
+What is shared state cache(sstate cache ) in Yocto Project?
+It stores the intermediate files which are generated during the build process.
+This sstate-cache directory is used to speed up the build process.
+You can find this directory inside the build folder.
+
+ 

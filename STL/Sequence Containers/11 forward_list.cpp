@@ -8,6 +8,10 @@
 // 4. Few Available Operations
 //    operator =, assign, front, empty, max_size, clear, insert_after, emplace_after, reverse, sort, merge
 //    splice_after, unique, remove, remove_if, resize
+
+// Unlike other STL libraries, std::forward_list does not have any size() method. 
+// we can find size by using distance method: size = distance(forward_list.begin(), forward_list.end()); 
+
 #include <iostream>
 #include <forward_list>
 using namespace std;
@@ -21,6 +25,5 @@ int main()
 
     for(auto& elm: list1)
         cout << elm << endl;
-    
     return 0;
 }

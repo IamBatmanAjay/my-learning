@@ -1,0 +1,41 @@
+
+
+The key in lock-free programming is to use hardware-intrinsic atomic operations.
+
+As a matter of fact, even locks themselves must use those atomic operations!
+
+But the difference between locked and lock-free programming is that a lock-free program can never be stalled 
+entirely by any single thread. By contrast, if in a locking program one thread acquires a lock and then gets 
+suspended indefinitely, the entire program is blocked and cannot make progress. By contrast, a lock-free program 
+can make progress even if individual threads are suspended indefinitely.
+
+Here's a simple example: A concurrent counter increment. We present two versions which are both "thread-safe", 
+i.e. which can be called multiple times concurrently. First the locked version:
+
+int counter = 0;
+std::mutex counter_mutex;
+
+void increment_with_lock()
+{
+    std::lock_guard<std::mutex> _(counter_mutex);
+    ++counter;
+}
+
+Now the lock-free version:
+
+std::atomic<int> counter(0);
+
+void increment_lockfree()
+{
+    ++counter;
+}
+
+Now imagine hundreds of thread all call the increment_* function concurrently. In the locked version, 
+no thread can make progress until the lock-holding thread unlocks the mutex. By contrast, in the lock-free 
+version, all threads can make progress. If a thread is held up, it just won't do its share of the work, 
+but everyone else gets to get on with their work.
+
+It is worth noting that in general lock-free programming trades throughput and mean latency throughput for 
+predictable latency. That is, a lock-free program will usually get less done than a corresponding locking 
+program if there is not too much contention (since atomic operations are slow and affect a lot of the rest 
+of the system), but it guarantees to never produce unpredictably large latencies.

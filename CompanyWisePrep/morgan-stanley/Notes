@@ -1,0 +1,67 @@
+ask somethings about project you did
+
+First round is a 30~45 mins phone interview. Pretty standard question, self introduction, basic C++ concept, common Linux commands.
+
+Find special charaters like digit and question mark in a string.
+What is smart pointer?
+Smart pointer implementation
+Quick algorithm questions (time complexity, space complexity)
+Other logical reasoning questions
+Something like FizzBuzz, than create data structures, merge, create algorithms.
+What is the difference between the exception handling in C and C++?
+later they asked wbout principles like rule of 3 or rule of 5.
+
+how do you implement a vector
+What's XML?
+the keywords mutable vs const
+- How to implement a lock-free algorithm
+- I haven't used virtual inheritance since a long while and forgot what it it about.
+
+
+Recursion :
+
+During recursion, there may exist a case where same sub-problems are solved multiple times.
+Consider the example of calculating nth fibonacci number.
+fibo(n) = fibo(n-1) + fibo(n-2)
+ffibo(n-1) = fibo(n-2) + fibo(n-3)
+fibo(n-2) = fibo(n-3) + ffibo(n-4)
+.................................
+................................
+................................
+fibo(2) = fibo(1) + fibo(0)
+
+In the first three steps, it can be clearly seen that fibo(n-3) is calculated twice. If one goes deeper into recursion, he/she may find repeating the same sub-problems again and again.
+
+Dynamic programming is a technique where you store the result of previous calculation to avoid calculating the same once again. DP is basically a memorization technique which uses a table to store the results of sub-problem so that if same sub-problem is encountered again in future, it could directly return the result instead of re-calculating it.
+
+Interview on :: 18/Jan
+Plan Morgan Stanley::
+Understand STL Concepts
+    - vector - Done
+    - map
+    - sets
+    - list - Done
+OOPS:
+    Move constructors and move assignment operators
+
+Algorithm
+    - quick sort
+    - heap sort
+
+Data Structure:
+    - Tree
+    - Graph
+    - Trie
+    - AVL tree
+    - n Ary Tree
+    - Red black Tree
+
+Problems:
+    - 10 dynamic programing ques
+    - 10 string manupulation ques
+    - 3- backtrace problem
+
+Design:
+    -- practice design concepts
+    -- analyze design problem
+

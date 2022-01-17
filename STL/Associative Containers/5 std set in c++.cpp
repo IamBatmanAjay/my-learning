@@ -27,7 +27,7 @@ class Person{
 };
 
 int main() {
-    set<Person, std::less<>> Set = {{30, "Rupesh"}, {25, "Hitesh"}, {22, "Jhon"}};
+    set<Person, std::less<>> Set = {{30, "Rupesh"}, {25, "Hitesh"}, {22, "Jhon"}, {35, "Ajay"}};
     for(const auto& e: Set){
         cout << e.age << " " << e.name << endl;
     }

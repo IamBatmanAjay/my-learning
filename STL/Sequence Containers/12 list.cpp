@@ -1,6 +1,6 @@
 // TOPIC: list In STL
 
-// 1. This is double linked list what we know from C prgramming language.
+// 1. This is a double linked list what we know from C prgramming language.
 // 2. List is sequence container that allow non-contiguous memory allocation.
 // 3. List is faster compared to other sequence containers (vector, forward_list, deque) in terms of 
 //    insertion, removal and moving elements in any position provided we have the iterator of the position. 

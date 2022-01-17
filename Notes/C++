@@ -1,0 +1,1 @@
+-- In C/C++, when we pass an array to a function say fun(), it is always treated as a pointer by fun().

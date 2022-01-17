@@ -20,7 +20,7 @@
 #include <iostream>
 using namespace std;
 
-// Iterative approach (i will explain recursive approach too)
+// Iterative approach
 int binarySearch(int * arr, int low,int high,int key) {
    if(low > high)
     return -1;

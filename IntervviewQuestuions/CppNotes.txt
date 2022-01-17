@@ -1,0 +1,10 @@
+
+--- Concepts of padding is applied, which increases the size of the data, but it reduces the no.
+    of memory cycles requirred to read that data. eg; struct{char a, char b, int c} size is 8 byte
+
+
+--- difference bw compiler, linker loader 
+
+-- placement new is a techinque to create an object at particualr memory allocation
+-- delete [] bp; how delete knows how many object to delete?
+    -- It stores n when it create objects by using new Base[n]

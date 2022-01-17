@@ -13,7 +13,6 @@
 #include <iostream>
 #include <map>
 #include <functional>
-#include <vector>
 using namespace std;
 
 class Person{
