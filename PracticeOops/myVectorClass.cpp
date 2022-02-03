@@ -26,7 +26,6 @@ T* arr;
 int capacity = 1;
 int counter = 0;
 
-
 public:
 myVector(){
     arr = new T[1];
