@@ -1,0 +1,42 @@
+There was a question on string related concept in which there was a long string in Which they asked to replace 
+occurrence of certain word with another word and and also asked to remove certain words.
+
+questions related to maths like vector, cartesian geometry, etc. Then at last he asked me to write a program in C++
+
+prime number function, matrix array
+
+1)Find nth Max No from array
+2)Check Whether string is cyclic
+3)2-3 Puzzles
+
+
+Technical round which was mostly based on geometry and puzzles and few optimisation programs.
+Then there will be the managerial round where the manager will go through all the papers and ask some program based and managerial questions.
+
+write optimised code for prime numbers
+
+puzzle of 3 boxes one contain red ball, one blue and one mixture of both, the labels of these boxes are not proper, how many minimum picks required to correct the label
+
+prove angle subtended by a semicircle is a right angle
+
+find angle between diagonals of a cube ==  cos-1(-1/3)
+
+you are given a paragraph consisting of letters ,numbers and special case character you have to count the occurrence of each character in the optimized way.
+
+->Difference between linked list and array and which is better ,why?
+    Differenciate in terms of size, memory allocation, memory efficiency, exection time
+    - array are stored in contiguous memory location whereas lists are not
+
+
+Interviewed on 28-01-2022:
+Questions asked on string manipulation in C way 
+    - Delete words
+    - count words
+    - check if a word exists
+Question from C++ 
+    - Operator overloading
+    - Memory allocation new vs malloc
+    - memory allocation for variables in program
+    - heap vs free store
+
+In the end interview was concluded with a puzzle 

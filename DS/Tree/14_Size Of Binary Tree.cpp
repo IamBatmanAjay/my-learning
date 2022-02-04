@@ -1,3 +1,5 @@
+// Size of the tree is equal to the no. of nodes present in the tree.
+
 #include <iostream>
 using namespace std;
 
@@ -6,7 +8,6 @@ struct  Node {
     Node* left;
     Node* right;
 };
-
 
 int getSize(Node* root) {
     if(root == NULL) {
@@ -17,4 +18,9 @@ int getSize(Node* root) {
     int rightSize = getSize(root->right);
 
     return leftSize + rightSize + 1;
+}
+
+int main()
+{
+    return 0;
 }

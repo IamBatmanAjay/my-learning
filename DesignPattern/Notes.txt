@@ -1,0 +1,24 @@
+There are four relationship between classes:
+    - inheritance (indicated using arrow)
+    - association (indicated using straight line)
+    - aggregation (indicated using line ending with blank diamond)
+    - composition (indicated using line ends with diamond)
+
+---------------
+While design use case diagram Consider:
+
+Systems
+Actors
+Use cases
+relationship
+
+
+Systems: use rectangle to represents 
+Actor: who is going to use the system, there could be different actor
+Use case: is depicted with oval shape
+There is a relationship bw actor and use case
+There is <include> relationship bw different use case which means it is necessary every times
+There is <extend> relationship which bw use cases which means it happens some time not necessary always
+There could be generalization for different use case
+
+

@@ -1,2 +1,35 @@
+In software industry, a design pattern is general repeatable solution to Commonly occurring problem in software design.
+
+Types:
+    Creational 
+    Behavioural 
+    Structural
+----------------
+
+
+Factory Method
+Provides instance of concrete implementation
+
+In the example:
+- createDough() - provides concrete implementation for dough. So this is a factory method
+
+Abstract Factory
+Provides interface to create family of related objects
+
+In the example:
+- PizzaIngredientsFactory is an abstract factory as it allows to create a related set of objects like Dough, Clams, Sauce. For creating each family of objects it provides a factory method.
+
+---------------------------------------------------------------------------------
+
+AFDP defines an abstract class for creating families of related objects but without
+specifying their concrete sub class
+
+Why/When to use AFDP:
+- You need system to be independent of how objects are created and composed and represented 
+- Show interface not implementation
+- System need to be configured with one of the multiple family of objects
+
+
+-------------------------------------------------------------------
 compile:  g++ -std="c++11" -o absFactoryPattern  client.cpp 
 run: ./absFactoryPattern

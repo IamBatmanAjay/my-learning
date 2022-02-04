@@ -11,7 +11,7 @@
 
 
 // TYPES OF TREE WE WILL COVER IN THIS SERIES:
-// Binary Tree, Binary Search Tree, AVL Tree, Red-Black Tree, Splay Tree, N-ary Tree, Tri Structure, 
+// Binary Tree, Binary Search Tree, AVL Tree, Red-Black Tree, Splay Tree, N-ary Tree, Trie Structure, 
 // Suffix Tree, Huffman Tree, Heap Structure, B Tree, B+ Tree, R Tree, Counted-B Tree, K-D Tree,
 // Decision Tree, Markel Tree, Fenwick Tree, Range Tree
 

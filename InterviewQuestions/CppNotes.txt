@@ -1,0 +1,58 @@
+
+--- Concepts of padding is applied, which increases the size of the data, but it reduces the no.
+    of memory cycles requirred to read that data. eg; struct{char a, char b, int c} size is 8 byte
+
+--- difference bw compiler, linker loader 
+
+-- placement new is a techinque to create an object at particualr memory allocation
+
+-- delete [] bp; how delete knows how many object to delete?
+    -- It stores n when it create objects by using new Base[n]
+
+-- Constructor delegation- helpful in avoiding code bloating
+
+-- How to call function before main(): The trick is to create a global object of class and call function() from the 
+    constructor of that class. OR create a global static var and initialize with the return value of the function
+
+-- Explicit Keyword or Explicit Constructor: To avoid calling implicit call to constructor eg; Base obj = 20
+
+-- Placement new in c++ : ex; Base obj = new (&memory[0]) Base(); It creates base object at given memory
+
+-- Base* obj = new Base(): It basically swittch from user mode to kernel mode and ask for memory and create the object and place it allocated memory and return the address to that object
+
+-- Why using namespace std is bad ?? It can create conflict if a new library is added and have same function. for ex; cout
+
+-- Override key in c++11? -> 1. Testing become easy. 2. Compile time check can be performed
+
+-- Name mangling? -> C++ achieves function overloading by using name mangling, by changing the name during compilation internally to support overloading
+
+-- Range based and for each based loop
+    for (int i = 0 ; i < 5; i++) 
+    {
+        vec.push_back(i);
+    }
+
+    for (int i: vec) // range based
+    {
+        //range based is good for iterating over full array
+        cout << i;
+    }
+    for_each(vec.begin() + 2, vec.end(), [](int j){cout << j;}) // for each based loop provide more control
+
+-- auto Keyword in c++ ? -> It is used for type deduction, use typeid(x) to check the type
+    type deduction is concept of RAII
+
+-- Object Slicing? -> Once we assign derived object to base object, in that case only base information get copied 
+    and derived information get sliced off
+
+-- Why the size of class or stuct is 1 in c++ (empty struct size is 0 in c)? -> C++ compiler tries to make sure 
+    any two objects are different, so It uses 1 Byte to do so
+
+-- Is it possible to call constructor and destructor by youself? yes It can, but not good practice to do so.
+    Base() -> It creates temporary object
+    Base().~Base() -> It works
+
+-- return of printf() and scanf() ? -> printf returns no. of char printed on console and scanf return no of element read 
+
+-- Why copy constructor takes argument as reference? -> To avoid infinte recursive call to copy constructor
+

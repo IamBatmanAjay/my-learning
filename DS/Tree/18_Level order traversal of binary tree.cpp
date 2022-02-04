@@ -1,6 +1,10 @@
 #include <iostream>
 #include <queue>
 using namespace std;
+/*
+Level oder traversal can be considered as BFS
+Always remember : We use Queue for BFS, whereas for DFS we use stack
+*/
 
 struct TreeNode
 {
@@ -26,3 +30,12 @@ void levelOrderTraversal(TreeNode *root) {
         if(root->right != nullptr) que.push(root->right);
     }
 }
+
+
+
+
+
+
+
+
+

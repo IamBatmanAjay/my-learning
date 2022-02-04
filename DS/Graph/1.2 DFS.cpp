@@ -22,11 +22,6 @@ using namespace std;
 vector<vector<int>> Vec;
 vector<bool> visited;
 
-
-
-
-
-
 void dfs_r(int s) {
     visited[s] = true;
     cout << s << " "; 
@@ -35,14 +30,6 @@ void dfs_r(int s) {
             dfs_r(Vec[s][i]);
     }
 }
-
-
-
-
-
-
-
-
 
 void dfs(const vector<vector<int>>& Vec, int s){
     std::stack<int> Stk;

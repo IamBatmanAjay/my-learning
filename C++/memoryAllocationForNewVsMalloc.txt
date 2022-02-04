@@ -1,0 +1,37 @@
+http://www.gotw.ca/gotw/009.htm
+
+Following are the differences between malloc() and operator new.: 
+
+1. Calling Constructors: new calls constructors, while malloc() does not. In fact primitive data types (char, int, float.. etc) 
+can also be initialized with new. For example, below program prints 10.
+
+2. operator vs function: new is an operator, while malloc() is a function.
+
+3. return type: new returns exact data type, while malloc() returns void *.
+
+4. Failure Condition: On failure, malloc() returns NULL where as new throws bad_alloc exception.
+
+5. Memory: In case of new, memory is allocated from free store where as in malloc() memory allocation is done from heap.
+
+6. Size: Required size of memory is calculated by compiler for new, where as we have to manually calculate size for malloc().
+
+7. Buffer Size: malloc() allows to change the size of buffer using realloc() while new doesn’t
+
+
+Free-store:
+
+The free store is one of the two dynamic memory areas, allocated/freed by new/delete. Object lifetime can be less 
+than the time the storage is allocated; that is, free store objects can have memory allocated without being 
+immediately initialized, and can be destroyed without the memory being immediately deallocated. During the 
+period when the storage is allocated but outside the object's lifetime, the storage may be accessed and manipulated 
+through a void* but none of the proto-object's nonstatic members or member functions may be accessed, have their 
+addresses taken, or be otherwise manipulated.
+
+Heap:
+
+The heap is the other dynamic memory area, allocated/freed by malloc/free and their variants. Note that while the 
+default global new and delete might be implemented in terms of malloc and free by a particular compiler, the heap 
+is not the same as free store and memory allocated in one area cannot be safely deallocated in the other. Memory 
+allocated from the heap can be used for objects of class type by placement-new construction and explicit destruction. 
+If so used, the notes about free store object lifetime apply similarly here.
+

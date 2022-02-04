@@ -14,5 +14,3 @@
 //    B. left right    ==>> Left and Right Rotation
 //    C. right left    ==>> Right and Left Rotation
 //    D. right right   ==>> Left 
-
-// WE WILL LEARN PROGRAM IN NEXT VIDEO.

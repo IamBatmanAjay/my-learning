@@ -17,7 +17,7 @@ class A {
     public:
         A(){}
         ~A(){}
-        int get(){return 1;}
+        virtual int get(){return 1;}
     private:
 };
 

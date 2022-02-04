@@ -1,2 +1,13 @@
+In software industry, a design pattern is general repeatable solution to Commonly occurring problem in software design.
+
+Types:
+    Creational 
+    Behavioural 
+    Structural
+----------------
+FDP:
+It creates object for you rather you intiating object directly
+FDP is also known as virtual constructor(C++ doesnt supoort virtual constructor)
+
 compile:  g++ -o factoryPattern  client.cpp Object.cpp ToyFactory.cpp 
 run: ./factoryPattern

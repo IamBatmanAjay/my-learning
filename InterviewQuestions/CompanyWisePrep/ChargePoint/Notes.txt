@@ -1,0 +1,19 @@
+several questions from resume/prior experience; couple of open ended design questions like how to design syslogd; 
+extension to the question is how to stream the logs out of the system; few coding questions related to bit 
+manipulation, arrays etc..; embedded linux internals; I2C, SPI, PPP etc..,
+
+basic asked about linked lists
+how to display a reverse linked list
+
+mostly linked lists
+how to display a reverse linked list
+how to detect a loop in a linked list
+
+Sort a link list inplace?
+There was a basic coding paper test based on C/C++ followed by technical + HR interviews. The technical interview 
+wasn't very hard , but required to have clear concepts relating to C and Operating Systems.
+A bit manipulation question and a Binary tree question .
+
+String recursion.
+Game of life coding exercise
+

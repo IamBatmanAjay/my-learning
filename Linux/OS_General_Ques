@@ -78,13 +78,17 @@ Multiple applications.
 Multi-tasking inside an application.
 High throughput and responsiveness.
 Hardware sharing among CPUs.
+
 12. What is kernel?
 
-A kernel is the central component of an operating system that manages the operations of computers and hardware. It basically manages operations of memory and CPU time. It is a core component of an operating system. Kernel acts as a bridge between applications and data processing performed at the hardware level using inter-process communication and system calls.
+A kernel is the central component of an operating system that manages the operations of computers and hardware. It basically manages operations of memory and CPU time. 
+It is a core component of an operating system. 
+Kernel acts as a bridge between applications and data processing performed at the hardware level using inter-process communication and system calls.
 
 13.  What are real-time systems?
 
-A real-time system means that the system is subjected to real-time, i.e., the response should be guaranteed within a specified timing constraint or the system should meet the specified deadline. 
+A real-time system means that the system is subjected to real-time, i.e., the response should be guaranteed 
+within a specified timing constraint or the system should meet the specified deadline. 
 
 14.What are the different scheduling algorithms?
 First-Come, First-Served (FCFS) Scheduling. 
@@ -93,40 +97,45 @@ Priority Scheduling.
 Shortest Remaining Time. 
 Round Robin(RR) Scheduling. 
 Multiple-Level Queues Scheduling. 
- 
-
-
 
 
 15. What is a deadlock?  
-Deadlock is a situation when two or more processes wait for each other to finish and none of them ever finish.  Consider an example when two trains are coming toward each other on the same track and there is only one track, none of the trains can move once they are in front of each other.  A similar situation occurs in operating systems when there are two or more processes that hold some resources and wait for resources held by other(s). 
+Deadlock is a situation when two or more processes wait for each other to finish and none of them ever finish.  
+Consider an example when two trains are coming toward each other on the same track and there is only one track, 
+none of the trains can move once they are in front of each other.  A similar situation occurs in operating systems 
+when there are two or more processes that hold some resources and wait for resources held by other(s). 
 
  
 
 16.  What is virtual memory?
 
-Virtual memory creates an illusion that each user has one or more contiguous address spaces, each beginning at address zero. The sizes of such virtual address spaces are generally very high. The idea of virtual memory is to use disk space to extend the RAM. Running processes don’t need to care whether the memory is from RAM or disk. The illusion of such a large amount of memory is created by subdividing the virtual memory into smaller pieces, which can be loaded into physical memory whenever they are needed by a process. 
+Virtual memory creates an illusion that each user has one or more contiguous address spaces, each beginning at 
+address zero. The sizes of such virtual address spaces are generally very high. The idea of virtual memory is 
+to use disk space to extend the RAM. Running processes don’t need to care whether the memory is from RAM or disk. 
+The illusion of such a large amount of memory is created by subdividing the virtual memory into smaller pieces, 
+which can be loaded into physical memory whenever they are needed by a process. 
  
 
 17. Describe the objective of multi-programming.
 
-Multi-programming increases CPU utilization by organizing jobs (code and data) so that the CPU always has one to execute. The main objective of multi-programming is to keep multiple jobs in the main memory. If one job gets occupied with IO, CPU can be assigned to other jobs. 
+Multi-programming increases CPU utilization by organizing jobs (code and data) so that the CPU always has one to execute. 
+The main objective of multi-programming is to keep multiple jobs in the main memory. If one job gets occupied with IO, 
+CPU can be assigned to other jobs. 
 
 18.  What is the time-sharing system?
 
-Time-sharing is a logical extension of multiprogramming. The CPU performs many tasks by switches that are so frequent that the user can interact with each program while it is running. A time-shared operating system allows multiple users to share computers simultaneously.
+Time-sharing is a logical extension of multiprogramming. The CPU performs many tasks by switches that are so frequent 
+that the user can interact with each program while it is running. A time-shared operating system allows multiple users 
+to share computers simultaneously.
 
 19.  What is a thread?
 
 A thread is a path of execution within a process. A process can contain multiple threads.
- 
-
-
-
 
 20. Give some benefits of multithreaded programming?
 
-A thread is also known as lightweight process. The idea is to achieve parallelism by dividing a process into multiple threads. Threads within the same process run in shared memory space, 
+A thread is also known as lightweight process. The idea is to achieve parallelism by dividing a process into multiple 
+threads. Threads within the same process run in shared memory space, 
 
 21.  Briefly explain FCFS?
 
@@ -134,19 +143,22 @@ FCFS stands for First Come First Serve. In the FCFS scheduling algorithm, the jo
 
 22. What is the RR scheduling algorithm?
 
-A round-robin scheduling algorithm is used to schedule the process fairly for each job a time slot or quantum and interrupting the job if it is not completed by then the job comes after the other job which is arrived in the quantum time that makes these scheduling fairly.
+A round-robin scheduling algorithm is used to schedule the process fairly for each job a time slot or quantum and 
+interrupting the job if it is not completed by then the job comes after the other job which is arrived in the 
+quantum time that makes these scheduling fairly.
 
 Round-robin is cyclic in nature, so starvation doesn’t occur
 Round-robin is a variant of first come, first served scheduling
 No priority, special importance is given to any process or task
 RR scheduling is also known as Time slicing scheduling
+
 23.  What are the necessary conditions which can lead to a deadlock in a system?
 
 Mutual Exclusion: There is a resource that cannot be shared. 
 Hold and Wait: A process is holding at least one resource and waiting for another resource, which is with some other process. 
 No Preemption: The operating system is not allowed to take a resource back from a process until the process gives it back. 
 Circular Wait:  A set of processes are waiting for each other in circular form. 
- 
+
 
 24.  Enumerate the different RAID levels?
 
@@ -162,29 +174,40 @@ Level-3
 Level-4
 Level-5
 Level-6
+
 25.  What is Banker’s algorithm?
 
-The banker’s algorithm is a resource allocation and deadlock avoidance algorithm that tests for safety by simulating the allocation for predetermined maximum possible amounts of all resources, then makes an “s-state” check to test for possible activities, before deciding whether allocation should be allowed to continue.
+The banker’s algorithm is a resource allocation and deadlock avoidance algorithm that tests for safety by simulating 
+the allocation for predetermined maximum possible amounts of all resources, then makes an “s-state” check to test 
+for possible activities, before deciding whether allocation should be allowed to continue.
 
 26.  What factors determine whether a detection algorithm must be utilized in a deadlock avoidance system?
 
-One is that it depends on how often a deadlock is likely to occur under the implementation of this algorithm. The other has to do with how many processes will be affected by deadlock when this algorithm is applied.
+One is that it depends on how often a deadlock is likely to occur under the implementation of this algorithm. 
+The other has to do with how many processes will be affected by deadlock when this algorithm is applied.
 
 27.  State the main difference between logical and physical address space?
 
 Parameter	LOGICAL ADDRESS	PHYSICAL ADDRESS
 Basic	generated by CPU.	location in a memory unit.
-Address Space	Logical Address Space is a set of all logical addresses generated by the CPU in reference to a program.	Physical Address is a set of all physical addresses mapped to the corresponding logical addresses.
+Address Space	Logical Address Space is a set of all logical addresses generated by the CPU in reference to a program.	
+Physical Address is a set of all physical addresses mapped to the corresponding logical addresses.
 Visibility	Users can view the logical address of a program.	Users can never view the physical address of the program.
 Generation	generated by the CPU.	Computed by MMU.
 Access	The user can use the logical address to access the physical address.	The user can indirectly access physical address but not directly.
+
 28.  How does dynamic loading aid in better memory space utilization?
 
-With dynamic loading, a routine is not loaded until it is called. This method is especially useful when large amounts of code are needed in order to handle infrequently occurring cases such as error routines.
+With dynamic loading, a routine is not loaded until it is called. This method is especially useful when large 
+amounts of code are needed in order to handle infrequently occurring cases such as error routines.
 
 29.  What are overlays?
 
-The concept of overlays is that whenever a process is running it will not use the complete program at the same time, it will use only some part of it. Then overlays concept says that whatever part you required, you load it and once the part is done, then you just unload it, which means just pull it back and get the new part you required and run it. Formally, “The process of transferring a block of program code or other data into internal memory, replacing what is already stored”.
+The concept of overlays is that whenever a process is running it will not use the complete program at the same time, 
+it will use only some part of it. Then overlays concept says that whatever part you required, you load it and once 
+the part is done, then you just unload it, which means just pull it back and get the new part you required and run it. 
+Formally, “The process of transferring a block of program code or other data into internal memory, replacing what 
+is already stored”.
 
 30.  What is fragmentation?
 

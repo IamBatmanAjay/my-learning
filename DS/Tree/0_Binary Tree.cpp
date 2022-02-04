@@ -61,6 +61,5 @@ int main()
     delete left_right;
     delete right_left;
     delete right_right;
-
     return 0;
 }

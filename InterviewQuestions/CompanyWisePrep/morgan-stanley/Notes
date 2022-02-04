@@ -45,8 +45,8 @@ OOPS:
     Move constructors and move assignment operators
 
 Algorithm
-    - quick sort
-    - heap sort
+    - quick sort - Done
+    - heap sort - Done
 
 Data Structure:
     - Tree
@@ -64,4 +64,13 @@ Problems:
 Design:
     -- practice design concepts
     -- analyze design problem
+
+-----------------------
+I flawlessly failed the interview
+    - polymorphism
+    - casting static_cast and dynamic_cast
+    - why down casting should not be used
+    - can two classess with same method could be base class for a class
+    - Print right view of n ary tree
+    - Find Max path sum of nodes of a tree 
 
